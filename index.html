@@ -35,10 +35,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-6a9b6d9fa1db3dbb264fd10086f180d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-2a31e9a06f36f2fdccde1a962df3e206.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="index_files/libs/bootstrap/bootstrap-dark-2a31e9a06f36f2fdccde1a962df3e206.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="index_files/libs/bootstrap/bootstrap-2a31e9a06f36f2fdccde1a962df3e206.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="dark">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/proj4@2.11.0/dist/proj4.js"></script>
@@ -87,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="publication" class="level2">
 <h2 class="anchored" data-anchor-id="publication">Publication</h2>
-<p>Here we present the results of our open access publication on wildfire hazard mapping in Germany (currently under review). Please cite as:</p>
+<p>Here we present the results of our open access publication on wildfire hazard mapping in Germany (currently under review). This website will be updated as soon the publishing process is completed. All data outputs will then be available for download. In the meantime please cite as:</p>
 <blockquote class="blockquote">
 <p><em>Heisig, J., and Pebesma, E. (2026) Wildfire Hazard in Germany Under Worst-Case Conditions. Under review.</em></p>
 </blockquote>
@@ -105,7 +109,8 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="legend-container" style="width: 102%; margin-left: 0%;">
 
-  <div id="hazard-legend" style="display: flex; flex-wrap: wrap; justify-content: right; gap: 20px; padding: 15px; font-family: Arial, sans-serif; font-size: 14px; background: #f8f9fa; border: 1px solid #ccc; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+  <div id="hazard-legend" style="display: flex; flex-wrap: wrap; justify-content: right; gap: 20px; padding: 15px; font-family: Arial, sans-serif; font-size: 14px; color: #f4f4f4; background: #6b6b6bd3; border: 1px solid #ccc; 
+  ">
 
     <div style="font-weight: bold; line-height: 1; text-align: center; margin-bottom: 8px;" "=""> Wildfire Hazard &amp; Burn Probability </div>
     <div style="display: flex; align-items: center;">
@@ -132,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 
   </div>
 
-  <div id="flame-legend" style="display: flex; flex-wrap: wrap; justify-content: right; gap: 20px; padding: 15px; font-family: Arial, sans-serif; font-size: 14px; background: #f8f9fa; border: 1px solid #ccc; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+  <div id="flame-legend" style="display: flex; flex-wrap: wrap; justify-content: right; gap: 20px; padding: 15px; font-family: Arial, sans-serif; font-size: 14px; color: #f4f4f4; background: #6b6b6bd3; border: 1px solid #ccc; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 
     <div style="font-weight: bold"> Flame Length </div>
     <div style="display: flex; align-items: center;">
@@ -169,9 +174,28 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<div style="text-align: justify;">
 <p>Climate change is amplifying wildfire frequency and intensity in temperate Central Europe, making proactive hazard mapping essential for landscape mitigation. This study evaluates wildfire hazard in Germany under worst-case (i.e., near-maximum) environmental conditions to identify high-priority management zones. The minimum travel time algorithm was used to simulate over 50 million independent fires at a spatial resolution of 100 meters. The landscape was divided into seven distinct climatic fire occurrence areas and evaluated across all combinations of three wind speed percentiles (80th, 90th, and 97th) and three fuel moisture scenarios.</p>
 <p>We quantified hazard by integrating conditional burn probability (CBP) and conditional flame length (CFL). Fuel moisture emerged as the dominant driver of wildfire hazard, with drier conditions dramatically increasing simulated fire sizes and variances, whereas increases in wind speed had a negligible effect. Shrub fuels produced the most extreme fire behavior and frequently generated the longest flame lengths under worst-case conditions. Grass and forest fuels burned less intensely on average, but maximum aridity caused high-hazard forest areas to expand tenfold. Across the landscape, CBP remained highly skewed, revealing that a small number of volatile hotspots burn repeatedly while the vast majority of the country burns infrequently. The hazard map of Germany is dominated primarily by low hazard ratings, which cover large, continuous forest stands with dense overstorey canopies. Elevated hazards are concentrated in the northeast and west. These are represented either as an intensity-driven regime, defined by severe flame lengths, or a frequency-driven regime, characterized by a mix of fast-spreading grass and shrub fuels. The highest hazard ratings occur in open landscapes such as military areas and subalpine parklands, where rapid fire spread greatly increased burn probability. High-hazard zones consistently correlate with low canopy cover and reduced crown bulk density. This structural vulnerability is particularly evident in disturbed regions, where canopy dieback has simultaneously increased surface fuel loads and reduced the sheltering effect that typically dampens wind speeds and evaporation.</p>
 <p>Long-term wildfire mitigation in Germany should focus on high-hazard hotspots where volatile fuel configurations overlap with containment constraints resulting from terrain or unexploded ordnance. As fuels are the only landscape component that humans can actively manipulate, management frameworks must prioritize reducing understorey shrub loads, maintaining closed overstorey canopies, and diversifying forest structure, in order to build resilience against accelerating climate pressures.</p>
+</div>
+</section>
+<section id="contact" class="level2">
+<h2 class="anchored" data-anchor-id="contact">Contact</h2>
+<p>For questions or remarks please feel free to contact</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 75%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><a href="https://www.uni-muenster.de/Geoinformatics/institute/staff/index.php/354/Johannes_Heisig">Johannes Heisig</a> <br> <a href="mailto:jheisig@uni-muenster.de">jheisig@uni-muenster.de</a> <br> Institute for Geoinformatics, <br> University of Münster, Germany</th>
+<th style="text-align: right;"><img src="ifgi_logo_white.png" alt="Company Logo" width="250"></th>
+</tr>
+</thead>
+
+</table>
 </section>
 
 </main>
