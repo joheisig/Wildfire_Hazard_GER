@@ -1,0 +1,49 @@
+#Randig Timings file
+
+#GetSystemInfo() reports 64 logical processors
+#omp_get_num_procs() reports 64 processors
+#Randig Inputs File: D:\Jo\FireHazard\output\v2\0_chunks\D1L1\p_97\wd_0\NE_16\D1L1_97_0_NE_16_randig.input
+landscape: D:\Jo\FireHazard\input\landscape\chunks\LCP_NE_16.tif
+NumFires: 10000
+Duration: 1200
+Resolution: 100.0
+SpotProbability: 0.050
+MTT_SPOT_DELAY: 0
+FireListFile: D:\Jo\FireHazard\output\v2\0_chunks\D3L3\p_80\wd_0\NE_16\_FireSizeList.txt
+WIND_SPEED: 27
+WIND_DIRECTION: 0
+WIND_SPEED_UNITS: 0
+FUEL_MOISTURES_DATA: 24
+0 6 7 11 60 90
+102 3 4 5 30 60
+103 3 4 5 30 60
+104 3 4 5 30 60
+105 3 4 5 30 60
+106 3 4 5 30 60
+107 3 4 5 30 60
+108 3 4 5 30 60
+109 3 4 5 30 60
+142 3 4 5 30 60
+143 3 4 5 30 60
+144 3 4 5 30 60
+145 3 4 5 30 60
+146 3 4 5 30 60
+147 3 4 5 30 60
+148 3 4 5 30 60
+149 3 4 5 30 60
+161 3 4 5 30 60
+162 3 4 5 30 60
+163 3 4 5 30 60
+164 3 4 5 30 60
+165 3 4 5 30 60
+183 3 4 5 30 60
+186 3 4 5 30 60
+SPOTTING_SEED: 599695
+CROWN_FIRE_METHOD: Finney
+GRIDDED_WINDS_GENERATE: Yes
+GRIDDED_WINDS_RESOLUTION: 300
+
+#	Number fires run: 6710
+#	Number fires failed: 0
+#	Percent burnable cells burned: 97.51
+#	Total Run Time: 90.62
