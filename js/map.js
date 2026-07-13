@@ -138,18 +138,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     map.addControl(new ActionButtons());
-
+//#f4f4f4
     const DashboardControl = L.Control.extend({
         options: { position: 'topright' },
         onAdd: function () {
             const container = L.DomUtil.create('div', 'custom-dashboard-control');
-            container.style.background = 'white';
+            container.style.background = '#6b6b6bd3';
+            container.style.color = '#f4f4f4';
             container.style.padding = '12px';
             container.style.borderRadius = '5px';
-            container.style.width = '240px';
+            container.style.width = '180px';
             container.innerHTML = `
                 <div style="font-weight: bold; margin-bottom: 5px;">Variable</div>
-                <label><input type="radio" name="var-group" value="WildFireHazard" checked> Hazard</label><br>
+                <label><input type="radio" name="var-group" value="WildFireHazard" checked> Wildfire Hazard</label><br>
                 <label><input type="radio" name="var-group" value="CondBurnProbability"> Burn Probability</label><br>
                 <label><input type="radio" name="var-group" value="CondFlameLength"> Flame Length</label><br>
 
@@ -163,8 +164,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <label><input type="radio" name="wind-group" value="90"> 90th</label>
                 <label><input type="radio" name="wind-group" value="97" checked> 97th</label>
 
+                <hr/>
+
                 <div style="margin-top: 10px;"><input type="checkbox" id="hide-unburnable"> Hide Unburnable</div>
-                <div style="margin-top: 10px;">Opacity: <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="0.7"></div>
+                
+                <div style="font-weight: bold; margin-top: 10px;">Opacity</div>
+                <div style="margin-top: 5px;"> <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="0.7"></div>
 
                 <div style="font-weight: bold; margin-top: 10px;">Basemap</div>
                 <label><input type="radio" name="basemap-group" value="osm" checked> OpenStreetMap</label><br>
