@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
         attribution: 'Tiles © Esri'
     });
 
+    const terrainLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri',
+        maxZoom: 13
+    });
+
     // 3. State
     let activeVariable = 'WildFireHazard';
     let activeMoisture = 'D1L1';
@@ -173,7 +178,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div style="font-weight: bold; margin-top: 10px;">Basemap</div>
                 <label><input type="radio" name="basemap-group" value="osm" checked> OpenStreetMap</label><br>
-                <label><input type="radio" name="basemap-group" value="satellite"> Satellite</label>
+                <label><input type="radio" name="basemap-group" value="satellite"> Satellite</label><br>
+                <label><input type="radio" name="basemap-group" value="terrain"> Terrain</label>
                 `;
             L.DomEvent.disableClickPropagation(container);
             return container;
@@ -218,9 +224,18 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('input[name="basemap-group"]').forEach(r => r.addEventListener('change', (e) => {
         if (e.target.value === 'osm') {
             if (map.hasLayer(satelliteLayer)) map.removeLayer(satelliteLayer);
+            if (map.hasLayer(terrainLayer)) map.removeLayer(terrainLayer);
+            //if (map.hasLayer(darkLayer)) map.removeLayer(darkLayer);
             if (!map.hasLayer(osmLayer)) osmLayer.addTo(map);
+        } else  if (e.target.value === 'terrain') {
+            if (map.hasLayer(osmLayer)) map.removeLayer(osmLayer);
+            //if (map.hasLayer(darkLayer)) map.removeLayer(darkLayer);
+            if (map.hasLayer(satelliteLayer)) map.removeLayer(satelliteLayer);
+            if (!map.hasLayer(terrainLayer)) terrainLayer.addTo(map);
         } else {
             if (map.hasLayer(osmLayer)) map.removeLayer(osmLayer);
+            if (map.hasLayer(terrainLayer)) map.removeLayer(terrainLayer);
+            //if (map.hasLayer(darkLayer)) map.removeLayer(darkLayer);
             if (!map.hasLayer(satelliteLayer)) satelliteLayer.addTo(map);
         }
         // Keep the raster on top of the newly-added basemap
