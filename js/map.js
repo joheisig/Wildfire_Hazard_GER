@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let activeVariable = 'WildFireHazard';
     let activeMoisture = 'D1L1';
     let activeWind = '97';
-    let currentOpacity = 1.0;
+    let currentOpacity = 0.7;
     let hideUnburnable = false;
     let germanyBounds = null;
 
@@ -164,8 +164,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <label><input type="radio" name="wind-group" value="97" checked> 97th</label>
 
                 <div style="margin-top: 10px;"><input type="checkbox" id="hide-unburnable"> Hide Unburnable</div>
-                <div style="margin-top: 10px;">Opacity: <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="1"></div>
-            `;
+                <div style="margin-top: 10px;">Opacity: <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="0.7"></div>
+
+                <div style="font-weight: bold; margin-top: 10px;">Basemap</div>
+                <label><input type="radio" name="basemap-group" value="osm" checked> OpenStreetMap</label><br>
+                <label><input type="radio" name="basemap-group" value="satellite"> Satellite</label>
+                `;
             L.DomEvent.disableClickPropagation(container);
             return container;
         }
@@ -205,6 +209,18 @@ document.addEventListener("DOMContentLoaded", function () {
         currentOpacity = parseFloat(e.target.value);
         if (activeLayer) activeLayer.setOpacity(currentOpacity);
     });
+
+    document.querySelectorAll('input[name="basemap-group"]').forEach(r => r.addEventListener('change', (e) => {
+        if (e.target.value === 'osm') {
+            if (map.hasLayer(satelliteLayer)) map.removeLayer(satelliteLayer);
+            if (!map.hasLayer(osmLayer)) osmLayer.addTo(map);
+        } else {
+            if (map.hasLayer(osmLayer)) map.removeLayer(osmLayer);
+            if (!map.hasLayer(satelliteLayer)) satelliteLayer.addTo(map);
+        }
+        // Keep the raster on top of the newly-added basemap
+        if (activeLayer) activeLayer.bringToFront();
+        }));
 
     // Initial Load
     updateMap();
