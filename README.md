@@ -4,4 +4,4 @@ This repository hosts the results of our scenario-based wildfire hazard modeling
 
 Visit [joheisig.github.io/Wildfire_Hazard_GER](https://joheisig.github.io/Wildfire_Hazard_GER/) for more details.
 
-For a small sample of input and output datasets visit [data subdirectory](data/randig_sample/).
+For downloading wildfire hazard maps or a small sample of input and output datasets, visit the [data subdirectory](data/randig_sample/).
